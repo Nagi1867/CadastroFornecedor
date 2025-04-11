@@ -21,4 +21,25 @@ public class FornecedorService {
         Optional<Fornecedor> obj = repository.findById(id);
         return obj.get();
     }
+
+    public Fornecedor insert(Fornecedor obj) {
+        return repository.save(obj);
+    }
+
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
+
+    public Fornecedor update(Long id, Fornecedor obj) {
+        Fornecedor entity = repository.getReferenceById(id);
+        updateData(entity, obj);
+        return repository.save(entity);
+    }
+
+    private void updateData(Fornecedor entity, Fornecedor obj) {
+        entity.setNome(obj.getNome());
+        entity.setCidade(obj.getCidade());
+        entity.setCidade(obj.getCidade());
+        entity.setStatus(obj.getStatus());
+    }
 }
