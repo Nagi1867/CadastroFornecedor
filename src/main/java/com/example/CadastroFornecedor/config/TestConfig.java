@@ -1,6 +1,7 @@
 package com.example.CadastroFornecedor.config;
 
 import com.example.CadastroFornecedor.entities.Fornecedor;
+import com.example.CadastroFornecedor.enums.Status;
 import com.example.CadastroFornecedor.repositories.FornecedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -15,7 +16,7 @@ public class TestConfig implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Fornecedor fornecedor = new Fornecedor(null, "Josepi", "SP", "24546456456", 1);
+        Fornecedor fornecedor = new Fornecedor(null, "Josepi", "SP", "24546456456", Status.ATIVO);
         repository.save(fornecedor);
     }
 }

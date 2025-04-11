@@ -1,5 +1,6 @@
 package com.example.CadastroFornecedor.entities;
 
+import com.example.CadastroFornecedor.enums.Status;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -18,12 +19,12 @@ public class Fornecedor implements Serializable {
 
     public Fornecedor() {}
 
-    public Fornecedor(Long id, String nome, String cidade, String telefone, Integer status) {
+    public Fornecedor(Long id, String nome, String cidade, String telefone, Status status) {
         this.id = id;
         this.nome = nome;
         this.cidade = cidade;
         this.telefone = telefone;
-        this.status = status;
+        setStatus(status);
     }
 
     public Long getId() {
@@ -58,12 +59,14 @@ public class Fornecedor implements Serializable {
         this.telefone = telefone;
     }
 
-    public Integer getStatus() {
-        return status;
+    public Status getStatus() {
+        return Status.ValueOf(status);
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setStatus(Status status) {
+        if (status != null) {
+            this.status = status.getCode();
+        }
     }
 
     @Override
