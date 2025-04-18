@@ -1,6 +1,6 @@
 package com.example.CadastroFornecedor.entities;
 
-import com.example.CadastroFornecedor.enums.Status;
+import com.example.CadastroFornecedor.entities.enums.Status;
 import jakarta.persistence.*;
 
 import java.io.Serializable;

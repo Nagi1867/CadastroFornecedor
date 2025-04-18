@@ -1,7 +1,7 @@
 package com.example.CadastroFornecedor.config;
 
 import com.example.CadastroFornecedor.entities.Fornecedor;
-import com.example.CadastroFornecedor.enums.Status;
+import com.example.CadastroFornecedor.entities.enums.Status;
 import com.example.CadastroFornecedor.repositories.FornecedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

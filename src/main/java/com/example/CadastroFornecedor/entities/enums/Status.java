@@ -1,4 +1,4 @@
-package com.example.CadastroFornecedor.enums;
+package com.example.CadastroFornecedor.entities.enums;
 
 public enum Status {
     INATIVO(0),
